@@ -6,3 +6,4 @@ matplotlib
 openpyxl
 pyyaml
 scipy
+statsmodels
