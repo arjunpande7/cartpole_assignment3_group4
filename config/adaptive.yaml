@@ -1,7 +1,7 @@
-name: baseline
+name: adaptive
 
 total_steps: 300000        
-episode_cap: 2000          
+episode_cap: 2000         
 
 # DQN hyperparameters
 learning_rate: 0.0005
@@ -17,7 +17,7 @@ epsilon_end: 0.05
 epsilon_decay_steps: 100000
 
 sampler:
-  type: uniform            
+  type: adaptive           
   low: 0.4
   high: 1.8
   n_bins: 15
@@ -26,6 +26,7 @@ sampler:
   alpha: 0.1
   cap: 2000
 
+# reward (factor 2)
 reward:
   type: standard           
   lambda: 0.5

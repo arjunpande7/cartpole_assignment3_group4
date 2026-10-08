@@ -1,4 +1,4 @@
-name: baseline
+name: stability
 
 total_steps: 300000        
 episode_cap: 2000          
@@ -9,7 +9,7 @@ gamma: 0.99
 buffer_size: 100000
 batch_size: 64
 learning_starts: 5000      
-target_update: 1000        
+target_update: 1000       
 grad_clip: 10
 
 epsilon_start: 1.0
@@ -27,5 +27,5 @@ sampler:
   cap: 2000
 
 reward:
-  type: standard           
+  type: stability         
   lambda: 0.5
