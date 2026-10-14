@@ -1,6 +1,6 @@
 name: stability
 
-total_steps: 300000        
+total_steps: 1000000       
 episode_cap: 2000          
 
 # DQN hyperparameters
