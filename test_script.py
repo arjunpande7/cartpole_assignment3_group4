@@ -10,7 +10,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# This is the 'standard' neural network
 class QNetwork(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(QNetwork, self).__init__()
@@ -48,7 +47,6 @@ def bar_plot(results):
     plt.show()
 
 
-# Test the agent after training
 def test_pole_length(env, q_network):
     """
     This function runs your trained network on a specific pole length
@@ -90,8 +88,7 @@ def test_script():
     pole_lengths = np.linspace(0.4, 1.8, 30)
     all_results = []
 
-    # import here your trained neural network
-    trained_nn = 'path_to_your_nn.pth'
+    trained_nn = 'stability_seed2.pth'
 
     results = {}
     total_score = 0
@@ -121,15 +118,14 @@ def test_script():
 
         total_score += mean_score
 
-        results[f"Avg_{round(length, 2)}"] = mean_score  # Store just the mean
-        results[f"Std_{round(length, 2)}"] = std_score  # Store std separately
+        results[f"Avg_{round(length, 2)}"] = mean_score  
+        results[f"Std_{round(length, 2)}"] = std_score  
 
-    results["Total"] = total_score  # Store just the mean
+    results["Total"] = total_score  
     all_results.append(results)
 
     bar_plot(all_results)
 
-    # Convert list to DataFrame
     df = pd.DataFrame(all_results)
     df.to_excel("experiment_results.xlsx", index=False)
 
